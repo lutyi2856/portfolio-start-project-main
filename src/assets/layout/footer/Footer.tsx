@@ -5,7 +5,7 @@ import {FlexWrapper} from "../../../components/flexWrapper";
 export const Footer = () => {
     return (
        <Section>
-           <FlexWrapper>
+           <FlexWrapper direction={'row'}>
 
            </FlexWrapper>
        </Section>
