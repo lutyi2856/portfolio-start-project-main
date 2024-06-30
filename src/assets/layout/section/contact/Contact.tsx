@@ -1,5 +1,4 @@
 import React from 'react';
-import {Section} from "../Section";
 import {FlexWrapper} from "../../../../components/flexWrapper";
 import styled from "styled-components";
 import {H2} from "../../../../components/h2/H2";
@@ -42,10 +41,10 @@ export const Contact = () => {
                             </li>
                         </StyledContactList>
                     </StyledContact>
-                    <StyledContact flexDirection={'column'}>
+                    <StyledContact>
                         <H3 text={'Contact me, let’s make magic together'}/>
                         <form action="#" method="post" target="_blank">
-                            <StyledContactList flexDirection={'column'}>
+                            <StyledContactList>
                                 <li>
                                     <Input id={'name'} placeholder={'Name:'}  />
                                 </li>
@@ -77,10 +76,10 @@ const StyledSectionContact = styled.section`
     }
 `
 
-const StyledContact = styled.div<ContactPropsType>`
+const StyledContact = styled.div`
     width: 50%;
     display: flex;
-    flex-direction: ${props => props.flexDirection || 'row'};
+    flex-direction: column;
     h3 {
         color: ${theme.colors.accent};
         margin-bottom: 24px;
@@ -93,7 +92,7 @@ const StyledContact = styled.div<ContactPropsType>`
         border-radius: 8px;
     }
 `
-const StyledContactList = styled.ul<ContactPropsType>`
+const StyledContactList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
