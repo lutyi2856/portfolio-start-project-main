@@ -96,9 +96,6 @@ const StyledContactList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    li {
-        margin-bottom: 16px;
-    }
 `
