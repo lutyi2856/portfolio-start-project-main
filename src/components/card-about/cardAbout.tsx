@@ -2,9 +2,9 @@ import React from 'react';
 import {Icon} from "../icon/Icon";
 import {H3} from "../h3/H3";
 import styled from "styled-components";
+import {theme} from "../../styles/Theme";
 
 type CardAboutPropsType = {
-    background?: string,
     cardTitle?: string,
     cardIcon?: string,
     iconWidth?: string,
@@ -22,5 +22,17 @@ export const CardAbout = (props:CardAboutPropsType) => {
 };
 
 const StyledCardAbout = styled.div<CardAboutPropsType>`
-background-color: ${props => props.background || '#BDBDBD'};
+background-color:  #BDBDBD;
+    display: flex;
+    min-height: 256px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0 24px 24px 24px;
+    &:hover {
+        background-color: ${theme.colors.accent};
+    }
+    svg {
+        margin: 0 0 14px 0;
+    }
 `

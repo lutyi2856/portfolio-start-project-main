@@ -4,6 +4,7 @@ import styled from "styled-components";
 type TextPropsType = {
     text: string,
     textSize?: string
+    margin?: string
 }
 
 type StyledTextProps = {

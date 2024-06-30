@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
+import {theme} from "../../styles/Theme";
 
 type InputPropsType = {
     name?: string
     type?: string
     placeholder?: string
     id?: string
-    background?: string
+
 }
 
 export const Input = (props:InputPropsType) => {
@@ -19,5 +20,8 @@ const StyledInput = styled.input<InputPropsType>`
 padding: 19px 16px;
     border-radius: 8px;
     border: none;
-    background-color: ${props => props.background || '#f5f5f5'};
+    background-color: ${theme.colors.inputBackroun};
+    min-width: 472px;
+    border-radius: 8px;
+    padding: 19px 16px 19px 16px;
 `

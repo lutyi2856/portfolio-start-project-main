@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {theme} from "../../styles/Theme";
 
 export const Menu = () => (
     <StyledMenu>
@@ -16,7 +17,15 @@ const StyledMenu = styled.nav`
 ul {
     display: flex;
 }
-    a {
-        color: #fff;
+    li:not(:last-child) {
+        margin-right: 52px; 
     }
+    
+    a {
+        ${theme.typography.menuItem}
+    }
+    a:active, a:hover {
+        color: ${theme.colors.accent}
+    }
+    
 `

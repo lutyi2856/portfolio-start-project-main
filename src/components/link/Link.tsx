@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from "styled-components";
 import {Icon} from "../icon/Icon";
 
-type LinkPropsType = {
+
+export type LinkPropsType = {
     href?: string
-    background?: string
     text?: string
     iconID?: string
     iconWidth?: string
@@ -14,16 +13,15 @@ type LinkPropsType = {
 
 export const Link = (props:LinkPropsType) => {
     return (
-           <StyledLink href={props.href || '#'} background={props.background}> {props.text}{props.iconID && (
+           <a  href={props.href || '#'}> {props.text}{props.iconID && (
                <Icon
                    iconID={`${props.iconID}`}
                    width={`${props.iconWidth}`}
                    height={`${props.iconHeight}`}
                    viewBox={`${props.iconViewBox}`}
+                   margin={'0 0 0 6px'}
                />
-           )}</StyledLink>
+           )}</a>
     );
 };
-const StyledLink = styled.a<LinkPropsType>`
-    background-color: ${props => props.background};
-`
+

@@ -13,22 +13,49 @@ type CardServicePropsType = {
     iconHeight?: string,
     iconViewBox?: string,
     borderColor?: string
+
 }
 
 export const CardService = (props:CardServicePropsType) => {
     return (
-        <div>
-            <Icon width={`${props.iconWidth}`} height={`${props.iconHeight}`} viewBox={`${props.iconViewBox}`} iconID={`${props.cardIcon}`}/>
+        <StyledCardService>
+            <Icon width={`${props.iconWidth}`} height={`${props.iconHeight}`} viewBox={`${props.iconViewBox}`} iconID={`${props.cardIcon}`} />
             <H3 text={`${props.cardTitle }`} />
-            <Text textSize={'17px'} text={`${props.descrption }`}/>
-        </div>
+            <Text text={`${props.descrption }`}/>
+        </StyledCardService>
     );
 };
 
 const StyledCardService = styled.div<CardServicePropsType>`
+    min-height: 338px;
 display: flex;
 flex-direction: column;
+    align-items: center;
 background-color: transparent;
-border: 3px solid ${props => props.borderColor || '7562E0'};
+    padding: 0 20px 0 20px;
 border-radius: 16px;
+    padding-top: 60px;
+    &:nth-child(even) {
+        border: 3px solid #fff;
+    }
+    &:nth-child(odd) {
+        border: 3px solid #7562E0;
+    }
+    h3 {
+        margin-bottom: 16px;
+    }
+    p {
+        text-align: center;
+        font-size: 17px;
+    }
+    &:nth-child(even) h3 {
+        color: #fff;
+    }
+    &:nth-child(odd) h3 {
+        color: #7562E0;
+    }
+    
+    svg {
+        margin-bottom: 7px;
+    }
 `
