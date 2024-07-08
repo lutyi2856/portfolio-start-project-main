@@ -8,6 +8,7 @@ type ImagePropsType = {
     width?: string
     height?: string
     typeImg?: string
+    srcSet?: string
 }
 
 type StyledImagePropsType = {
@@ -17,7 +18,7 @@ type StyledImagePropsType = {
 export const Image = (props: ImagePropsType) => {
     return (
         <StyledImage width={props.width} height={props.height} src={props.src} alt={props.alt}
-                     typeImg={`${props.typeImg}`}/>
+                     typeImg={`${props.typeImg}`} srcSet={props.srcSet}/>
     );
 };
 

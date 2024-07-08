@@ -13,13 +13,15 @@ type ProjectCardPropsType = {
     src?: string
     projectTitle?: string
     description?: string
+    retina?: string
+
 
 }
 
 export const ProjectCard = (props:ProjectCardPropsType) => {
     return (
         <StyledProjectCard>
-            <Image src={`${props.src}`} alt={`Проект.`} width={`311`} height={`173`}/>
+            <Image src={`${props.src}`} alt={`Проект.`} width={`311`} height={`173`} srcSet={`${props.retina}`}/>
             <H3 text={`${props.projectTitle }`}/>
             <Text  text={`${props.description }`}/>
             <Link text={'View Live'} />
@@ -35,6 +37,7 @@ const StyledProjectCard = styled.div`
     justify-content: center;
     padding: 16px 16px 23px 16px;
     gap: 16px;
+    
     a {
         display: flex;
         width: calc(50% - 8px);
@@ -46,7 +49,7 @@ const StyledProjectCard = styled.div`
         border: 2px solid #7562e0;
         border-radius: 8px;
     }
-    
+
     a:last-child {
         background-color: transparent;
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Image} from "../../../../components/image/Image";
 import portret from '../../../image/portrait.webp'
+import portret2x from '../../../image/portrait2x.webp'
+import portret3x from '../../../image/portrait3x.webp'
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../components/flexWrapper";
 import {Link} from "../../../../components/link/Link";
@@ -38,7 +40,9 @@ export const Main = () => {
                         <Image src={portret}
                                alt={'Мужчина'}
                                width={'444'}
-                               height={'444'} typeImg={'decoretion'}/>
+                               height={'444'}
+                               typeImg={'decoretion'}
+                               srcSet={`${portret2x} 2x, ${portret3x} 3x`}/>
                     </StyledBefover>
 
                 </FlexWrapper>
@@ -62,13 +66,11 @@ const StyledMain = styled.main`
         border-radius: 8px;
         margin-right: 32px;
     }
-    
+
     a + a {
         background-color: transparent;
         margin-right: 0;
     }
-
-
 `
 const StyledSpanHello = styled.span`
     width: 100%;

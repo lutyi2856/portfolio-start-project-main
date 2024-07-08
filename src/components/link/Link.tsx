@@ -1,5 +1,7 @@
 import React from 'react';
 import {Icon} from "../icon/Icon";
+import styled from "styled-components";
+
 
 
 export type LinkPropsType = {
@@ -9,6 +11,8 @@ export type LinkPropsType = {
     iconWidth?: string
     iconHeight?: string
     iconViewBox?: string
+
+
 }
 
 export const Link = (props:LinkPropsType) => {
@@ -24,4 +28,3 @@ export const Link = (props:LinkPropsType) => {
            )}</a>
     );
 };
-
