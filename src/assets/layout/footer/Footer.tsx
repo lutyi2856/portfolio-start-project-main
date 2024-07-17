@@ -1,6 +1,6 @@
 import React from 'react';
 import {Section} from "../section/Section";
-import {FlexWrapper} from "../../../components/flexWrapper";
+import {FlexWrapper} from "../../../components/FlexWrapper";
 
 export const Footer = () => {
     return (

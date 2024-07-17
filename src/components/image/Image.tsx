@@ -22,7 +22,7 @@ export const Image = (props: ImagePropsType) => {
     );
 };
 
-const StyledImage = styled.img<StyledImagePropsType>`
+export const StyledImage = styled.img<StyledImagePropsType>`
     ${props => props.typeImg === 'decoretion' && css<StyledImagePropsType>`
         position: absolute;
         z-index: 2;

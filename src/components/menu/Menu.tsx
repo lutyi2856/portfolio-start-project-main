@@ -27,5 +27,9 @@ ul {
     a:active, a:hover {
         color: ${theme.colors.accent}
     }
+    @media ${theme.media.tablet} {
+        display: none;
+    }
+    
     
 `

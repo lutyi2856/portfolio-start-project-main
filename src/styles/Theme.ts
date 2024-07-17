@@ -29,8 +29,13 @@ export const theme = {
         font-size: 16px;
         color: #fff;`
 
-
+    },
+    media: {
+        tablet: '(max-width: 1024px)',
+        mobile: 'screen and (max-width: 767px)',
     }
+
+
 }
 
 

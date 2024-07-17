@@ -62,4 +62,11 @@ const StyledProjectCard = styled.div`
     p {
         margin-bottom: 24px;
     }
+
+    @media ${theme.media.tablet} {
+       h3 {
+           width: 100%;
+           text-align: center;
+       }
+    }
 `

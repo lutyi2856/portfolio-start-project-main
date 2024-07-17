@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlexWrapper} from "../../../../components/flexWrapper";
+import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {H2} from "../../../../components/h2/H2";
 import {Text} from "../../../../components/text/Text";
 import {CardAbout} from "../../../../components/card-about/cardAbout";
@@ -15,7 +15,7 @@ type StyledWrapperCardsProps = {
 
 export const About = () => {
     return (
-        <StyledSection>
+        <StyledSectionAbout>
             <Container>
                 <FlexWrapper wrap={'wrap'}>
                     <H2  text={'About me:'}/>
@@ -52,11 +52,11 @@ export const About = () => {
                 </FlexWrapper>
             </Container>
 
-        </StyledSection>
+        </StyledSectionAbout>
     );
 };
 
-const StyledSection = styled.section`
+const StyledSectionAbout = styled.section`
 padding: 55px 0 40px 0;
     h2 {
         margin-bottom: 8px;
@@ -67,6 +67,7 @@ padding: 55px 0 40px 0;
     p + p {
         margin-bottom: 0;  
     }
+    
 `
 
 export const StyledWrapperCards = styled.div<StyledWrapperCardsProps>`
@@ -75,6 +76,14 @@ export const StyledWrapperCards = styled.div<StyledWrapperCardsProps>`
     grid-template-columns: ${props => props.gridTemplateColumns || 'repeat(4, 1fr)'};
     row-gap:  16px;
     column-gap: 22px;
+
+    @media ${theme.media.tablet} {
+        grid-template-columns: ${props => props.gridTemplateColumns || 'repeat(2, 1fr)'};
+    }
+
+    @media ${theme.media.mobile} {
+        grid-template-columns: ${props => props.gridTemplateColumns || 'repeat(1, 1fr)'};
+    }
 `;
 
 const StyledSpanAbout = styled.span`

@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlexWrapper} from "../../../../components/flexWrapper";
+import {FlexWrapper} from "../../../../components/FlexWrapper";
 import styled from "styled-components";
 import {H2} from "../../../../components/h2/H2";
 import {Text} from "../../../../components/text/Text";
@@ -64,18 +64,6 @@ export const Contact = () => {
     );
 };
 
-const StyledSectionContact = styled.section`
-    padding: 88px 0 258px 0;
-    
-    h2 {
-        margin-bottom: 16px;
-    }
-    
-    p {
-        margin-bottom: 24px;
-    }
-`
-
 const StyledContact = styled.div`
     width: 50%;
     display: flex;
@@ -91,7 +79,42 @@ const StyledContact = styled.div`
         padding: 19px 16px 19px 16px;
         border-radius: 8px;
     }
+    @media ${theme.media.mobile} {
+        width: 100%;
+    }
 `
+
+const StyledSectionContact = styled.section`
+    padding: 88px 0 258px 0;
+    
+    h2 {
+        margin-bottom: 16px;
+    }
+    
+    p {
+        margin-bottom: 24px;
+    }
+    @media ${theme.media.tablet} {
+        padding: 40px 0 80px 0;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+        
+        ${FlexWrapper} {
+            flex-direction: column;
+        }
+        ${StyledContact}:first-child {
+            margin-bottom: 30px;
+        }
+    }
+`
+
+
 const StyledContactList = styled.ul`
     display: flex;
     flex-wrap: wrap;

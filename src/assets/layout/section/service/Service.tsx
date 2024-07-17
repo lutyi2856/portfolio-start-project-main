@@ -1,10 +1,11 @@
 import React from 'react';
 import {H2} from "../../../../components/h2/H2";
-import {FlexWrapper} from "../../../../components/flexWrapper";
+import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {StyledWrapperCards} from "../about/About";
 import {CardService} from "../../../../components/card-service/CardService";
 import {Container} from "../../../../components/Container";
 import styled from "styled-components";
+import {theme} from "../../../../styles/Theme";
 
 export const Service = () => {
     return (
@@ -70,4 +71,15 @@ const StyledSectionService = styled.section`
     h2 {
         margin-bottom: 32px;
     }
+    @media ${theme.media.tablet} {
+        ${StyledWrapperCards} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media ${theme.media.mobile} {
+        ${StyledWrapperCards} {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
 `

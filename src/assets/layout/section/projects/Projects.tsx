@@ -1,6 +1,5 @@
 import React from 'react';
-import {Section} from "../Section";
-import {FlexWrapper} from "../../../../components/flexWrapper";
+import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {H2} from "../../../../components/h2/H2";
 import {Text} from "../../../../components/text/Text";
 import {StyledWrapperCards} from "../about/About";
@@ -16,13 +15,14 @@ import project32x from '../../../image/project32x.webp';
 import project33x from '../../../image/project33x.webp';
 import {Container} from "../../../../components/Container";
 import styled from "styled-components";
+import {theme} from "../../../../styles/Theme";
 
 export const Projects = () => {
     return (
-        <StyledSectiopProject >
+        <StyledSectiopProject>
             <Container>
                 <FlexWrapper wrap={'wrap'}>
-                    <H2  text={'Featured projects:'}/>
+                    <H2 text={'Featured projects:'}/>
                     <Text
                         text={'I have worked on many projects over the course of being a Web Developer, here are a few of my live, real-world projects'}/>
                     <StyledWrapperCards gridTemplateColumns={'repeat(3, 1fr)'}>
@@ -50,11 +50,29 @@ export const Projects = () => {
 };
 
 const StyledSectiopProject = styled.section`
-padding: 40px 0 40px 0;
+    padding: 40px 0 40px 0;
+
     h2 {
         margin-bottom: 16px;
     }
+
     p {
         margin-bottom: 36px;
     }
+
+    @media ${theme.media.tablet} {
+        ${StyledWrapperCards} {
+            grid-template-columns: repeat(1, 1fr)
+        }
+
+    ;
+    }
+
+}
+
+@media ${theme.media.mobile} {
+    ${StyledWrapperCards} {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 `
